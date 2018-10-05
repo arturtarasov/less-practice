@@ -1,0 +1,57 @@
+@import "partials/params";
+@import "partials/mixins";
+
+@brd-radius: 5px;
+@font-size: 13px;
+
+#steps {
+  padding: 50px 0;
+  text-align: center;
+  & .tiles {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+    & .tile {
+      display: flex;
+      flex-direction: column;
+      width: 28%;
+      & .header {
+        padding: 10px;
+        text-align: center;
+        margin-bottom: 5px;
+        letter-spacing: 2px;
+        background-color: @primary-color;
+        font-weight: bold;
+        border-top-left-radius: @brd-radius;
+        border-top-right-radius: @brd-radius;
+      }
+
+      & .content {
+        flex-grow: 1;   /*блоки выстриваются по высоте относительно других блоков*/
+        text-align: left;
+        padding: 20px;
+        margin-bottom: 10px;
+        border-bottom-left-radius: @brd-radius;
+        border-bottom-right-radius: @brd-radius;
+        background-color: @light-color;
+
+        & p {
+          font-size: @font-size;
+          margin-bottom: 5px;
+          &.red {
+            color: @red-color;
+          }
+        }
+
+        & ul {
+          .clean;
+          padding: 10px 0  0 30px;
+          font-size: @font-size;
+          & li {
+            line-height: 2;
+          }
+        }
+      }
+    }
+  }
+}
